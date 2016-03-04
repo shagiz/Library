@@ -10,6 +10,7 @@ import java.io.IOException;
  * Created by shagi on 03.03.16.
  */
 public class TestServlet extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         super.doGet(req, resp);
