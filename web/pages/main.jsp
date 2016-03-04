@@ -20,7 +20,7 @@
 
         TestConneciton tc = new TestConneciton();
         tc.check();
-               
+
 %>
     </body>
 </html>
