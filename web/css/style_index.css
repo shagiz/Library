@@ -6,7 +6,6 @@ body {
     background-color: #eaeaea;
     margin:100px;
 }
-
 .main {
     background-color: #FFF;
     width: 1000px;
@@ -19,6 +18,7 @@ body {
     text-align:center;
     font-size:18px;
     font-weight:bold;
+
 }
 
 .text{
@@ -38,6 +38,7 @@ body {
     border: 1px solid #eaeaea;
     margin: 0 auto;
     padding:10px;
+
 }
 
 .footer{
@@ -49,4 +50,5 @@ body {
 
 .content{
     height: 300px;
+
 }
