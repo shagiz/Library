@@ -9,6 +9,7 @@
     </head>
 
     <body>
+        <%session.invalidate(); %>
         <div class="main">
 
             <div class="content">
@@ -31,7 +32,7 @@
             </div>
 
             <div class="footer">
-                Разработчик: Тимур Батыршинов, 2013 г
+               2016 г.
             </div>
         </div>
 
