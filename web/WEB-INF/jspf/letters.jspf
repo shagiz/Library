@@ -1,0 +1,27 @@
+
+<%@ page pageEncoding="UTF-8" %>
+
+<div class="letters">
+    <jsp:useBean id="letterList" class="ru.javashagi.web.beans.LetterList" scope="application"/>
+    <%
+        char selectedLetter = 0;
+        if (request.getParameter("letter")!=null){
+            selectedLetter = request.getParameter("letter").charAt(0);
+        }else if (session.getAttribute("letter")!=null){
+            selectedLetter = session.getAttribute("letter").toString().charAt(0);
+        }
+
+        session.setAttribute("letter",selectedLetter);
+        char[] letters = letterList.getRussianLetters();
+        for (int i = 0; i < letters.length; i++) {
+            if (selectedLetter!=0 && selectedLetter==letters[i]){
+    %>
+    <a  style="color:red" href="books.jsp?letter=<%=letters[i]%>"><%=letters[i]%></a>
+    <%
+            }else {
+    %>
+    <a  href="books.jsp?letter=<%=letters[i]%>"><%=letters[i]%></a>
+    <%
+            }
+        }%>
+</div>

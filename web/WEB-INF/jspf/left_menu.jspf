@@ -1,15 +1,32 @@
-<%@page import="ru.javabegin.training.web.beans.Genre"%>
+<%@page import="ru.javashagi.web.beans.Genre" %>
 <%@ page pageEncoding="UTF-8" %>
 <div class="sidebar1">
     <h4>Жанры:</h4>
     <ul class="nav">
-        <jsp:useBean id="genreList" class="ru.javabegin.training.web.beans.GenreList" scope="application"/>
+        <jsp:useBean id="genreList" class="ru.javashagi.web.beans.GenreList" scope="application"/>
         <li><a href="books.jsp?genre_id=0">Все книги</a></li>
         <%
-            for (Genre genre : genreList.getGenreList()) {
-        %>
-        <li><a href="books.jsp?genre_id=<%=genre.getId()%>"><%=genre.getName()%></a></li>
+            long genreID = 0;
+            if (request.getParameter("genre_id") != null) {
+                genreID = Long.valueOf(request.getParameter("genre_id"));
+            } else if (session.getAttribute("genre_id") != null) {
+                genreID = Long.valueOf(session.getAttribute("genre_id").toString());
+            }
 
-        <%}%>
+            session.setAttribute("genre_id", genreID);
+            for (Genre genre : genreList.getGenreList()) {
+                if (genreID != 0 && genreID == genre.getId()) {
+        %>
+        <li><a style="color:red" href="books.jsp?genre_id=<%=genre.getId()%>"><%=genre.getName()%>
+        </a></li>
+
+        <%
+        } else {
+        %>
+        <li><a href="books.jsp?genre_id=<%=genre.getId()%>"><%=genre.getName()%>
+        </a></li>
+
+        <%}
+            }%>
     </ul>
 </div>

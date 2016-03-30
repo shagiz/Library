@@ -1,12 +1,12 @@
-<%@page import="ru.javabegin.training.web.enums.SearchType"%>
+<%@page import="ru.javashagi.web.enums.SearchType"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="ru.javabegin.training.web.beans.Book"%>
+<%@page import="ru.javashagi.web.beans.Book"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
 <%@include file="../WEB-INF/jspf/left_menu.jspf" %>
 
-<jsp:useBean id="bookList" class="ru.javabegin.training.web.beans.BookList" scope="page"/>
+<jsp:useBean id="bookList" class="ru.javashagi.web.beans.BookList" scope="page"/>
 
 <%@include file="../WEB-INF/jspf/letters.jspf" %>
 
